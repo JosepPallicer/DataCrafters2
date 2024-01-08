@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Modelo.TipoclientesEntity" table="tipoclientes" schema="onlinestore">
+        <id name="tipo">
+            <column name="tipo" sql-type="varchar(20)" length="20"/>
+        </id>
+        <property name="cuotaAnual">
+            <column name="cuotaAnual" sql-type="decimal(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="descuentoEnvio">
+            <column name="descuentoEnvio" sql-type="decimal(4,2)" precision="4" scale="2" not-null="true"/>
+        </property>
+        <set name="clientesTipo" inverse="true">
+            <key>
+                <column name="tipo" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="Modelo.ClientesEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vista.Controller">
+    <AnchorPane  VBox.vgrow="ALWAYS">
+            <Label layoutX="124.0" layoutY="7.0" text="Lista de articulos" textFill="#288bb5">
+               <font>
+                  <Font size="54.0" />
+               </font>
+            </Label>
+            <TableView layoutX="27.0" layoutY="87.0" prefHeight="245.0" prefWidth="591.0" fx:id="tablaArticulos">
+              <columns>
+                  <TableColumn fx:id="idCodigoArticuloLista" prefWidth="48.0" text="Codigo" />
+                <TableColumn fx:id="nombreArticuloLista" prefWidth="132.0" text="Nombre" />
+                <TableColumn fx:id="descripcionArticuloLista" prefWidth="219.0" text="Descripción" />
+                  <TableColumn fx:id="precioArticuloLista" minWidth="0.0" prefWidth="41.0" text="Precio" />
+                  <TableColumn fx:id="horasPreparacionArticuloLista" prefWidth="70.0" text="Horas prep" />
+                  <TableColumn fx:id="gastosEnvioArticuloLista" text="Gastos envio" />
+              </columns>
+            </TableView>
+            <Button layoutX="273.0" layoutY="357.0" mnemonicParsing="false" text="Actualizar lista" onAction="#botonActualizarArticulos">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+    </AnchorPane>
+</VBox>

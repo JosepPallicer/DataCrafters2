@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Modelo.ClientesEntity" table="clientes" schema="onlinestore">
+        <id name="idCliente">
+            <column name="id_cliente" sql-type="int"/>
+        </id>
+        <property name="nif">
+            <column name="nif" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(25)" length="25" not-null="true"/>
+        </property>
+        <property name="nombre">
+            <column name="nombre" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="apellido1">
+            <column name="apellido1" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="apellido2">
+            <column name="apellido2" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="domicilio">
+            <column name="domicilio" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="tipo">
+            <column name="tipo" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

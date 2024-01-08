@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Modelo.DetallepedidoEntity" table="detallepedido" schema="onlinestore">
+        <composite-id mapped="true" class="Modelo.DetallepedidoEntityPK">
+            <key-property name="idNumeroPedido">
+                <column name="id_numeroPedido" sql-type="int"/>
+            </key-property>
+            <key-property name="idCodigo">
+                <column name="id_codigo" sql-type="int"/>
+            </key-property>
+        </composite-id>
+        <property name="cantidad">
+            <column name="cantidad" sql-type="decimal(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="precio">
+            <column name="precio" sql-type="decimal(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <many-to-one name="codigoArticulos" class="Modelo.ArticulosEntity">
+            <column name="id_codigo"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

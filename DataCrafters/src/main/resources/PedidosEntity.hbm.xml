@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Modelo.PedidosEntity" table="pedidos" schema="onlinestore">
+        <id name="idNumeroPedido">
+            <column name="id_numeroPedido" sql-type="int"/>
+        </id>
+        <property name="idCliente">
+            <column name="id_cliente" sql-type="int" not-null="true"/>
+        </property>
+        <property name="fechaHora">
+            <column name="fechaHora" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="enviado">
+            <column name="enviado" sql-type="tinyint(1)"/>
+        </property>
+        <property name="pagado">
+            <column name="pagado" sql-type="tinyint(1)"/>
+        </property>
+        <many-to-one name="idClientes" class="Modelo.ClientesEntity" insert="false" update="false">
+            <column name="id_cliente" not-null="true"/>
+        </many-to-one>
+        <set name="idPedidos" inverse="true">
+            <key>
+                <column name="id_numeroPedido"/>
+            </key>
+            <one-to-many not-found="ignore" class="Modelo.DetallepedidoEntity"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,11 @@
+Controlador\Utilidades.class
+Vista\Controller.class
+Modelo\DetallepedidoEntityPK.class
+Modelo\ArticulosEntity.class
+Vista\OnlineStore.class
+Modelo\DetallepedidoEntity.class
+Vista\GestionOS.class
+Modelo\ClientesEntity.class
+Controlador\Controlador.class
+Modelo\PedidosEntity.class
+Modelo\TipoclientesEntity.class
